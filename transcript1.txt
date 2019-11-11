@@ -1,0 +1,1 @@
+sh: 3: ../exp/tdnn_7b_chain_online/final.mdl: Exec format error
