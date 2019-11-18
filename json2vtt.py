@@ -51,6 +51,8 @@ for frags in data["fragments"]:
         output = output + convert_time(float(frags["begin"]),"begin")
         output = output + convert_time(float(frags["end"]),"end") 
         output = output + str(frags["lines"])[2:][:-2] + "\n"
+        output = output.replace("\"","")
+        output = output.replace("\'","")
         #output=output + str(frags["lines"])[2:][:-2] + "\n"
         #f.write(frags["lines"][2:][:-2])
         #f.write("\n")
