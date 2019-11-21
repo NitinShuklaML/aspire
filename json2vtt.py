@@ -4,10 +4,14 @@
 # Importing json Module for reading the incoming JSON files
 
 import json
+import sys
 
 # Reading JSON file from current Directory
 
-with open('map.json') as json_file:
+args=str(sys.argv[1])
+json_file_args=args+"_map.json"
+
+with open(json_file_args) as json_file:
     data = json.load(json_file)
     
 transcript = json.dumps(data, indent=4)
@@ -20,7 +24,7 @@ transcript = json.dumps(data, indent=4)
 empty=['']
 output="WEBVTT\n\n"
 
-f=open("Sample.vtt","w+")
+f=open(args+".vtt","w+")
 
 def convert_time(time,pos):    
     time = float(frags[pos])    

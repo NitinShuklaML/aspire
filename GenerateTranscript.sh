@@ -54,7 +54,7 @@ grep -E -v "LOG \(online2-wav-nnet3-latgen-faster|online2-wav-nnet3-latgen-faste
 
 rm -rf ${PREFIX}_transcript1.txt
 
-cat ${PREFIX}_finalfinal.txt | tr ' ' '\n' > ${PREFIX}_transcript.txt
+cat ${PREFIX}_finalfinal.txt 
 
 
 echo "Transcript Generated"

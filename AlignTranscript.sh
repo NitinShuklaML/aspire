@@ -6,10 +6,10 @@ echo "Input file path is "$file_path
 
 python -m aeneas.tools.execute_task \
 	                           $file_path \
-				               ${1}_transcript.txt \
+				               ${1}_saperated_text.txt \
 							                                                        "task_language=eng|os_task_file_format=json|is_text_type=plain" \
-														                                                                            map.json
+														                                                                           $1_map.json
 
 echo "Alignment Complete"
 
-cat map.json
+#cat $1_map.json
