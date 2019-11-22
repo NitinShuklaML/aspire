@@ -20,14 +20,19 @@ echo "REQUEST_URL is : "$VIDEO_URL
 
 REQUEST=$(curl -X GET -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" $VIDEO_URL)
 
-echo $REQUEST > ${1::-4}.json
+echo $REQUEST > $1.json
 
-echo $(extract_json.py ${1::-4}.json)
+cat $1.json
+echo "JSON generated"
 
-wget -O $1.mp4 $extract_json.py ${1::-4}.json
+echo $($(pwd)/extract_json.py $1.json)
+
+echo $1.mp4 $(extract_json.py $1.json)
+
+wget -O $1.mp4 $($(pwd)/extract_json.py $1.json)
 
 ffmpeg -i $1.mp4 -acodec pcm_s16le -ar 8000 -ac 1 $1.wav
 
-rm -rf ${1::-4}.json 
+rm -rf $1.json 
 
 

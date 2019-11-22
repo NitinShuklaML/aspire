@@ -5,10 +5,14 @@
 
 import json
 import sys
+import os
 
 # Reading JSON file from current Directory
 
 args=str(sys.argv[1])
+file_path=os.getcwd()+"/vtts/"+args
+
+print("vtts file path"+ file_path)
 json_file_args=args+"_map.json"
 
 with open(json_file_args) as json_file:
@@ -24,7 +28,7 @@ transcript = json.dumps(data, indent=4)
 empty=['']
 output="WEBVTT\n\n"
 
-f=open(args+".vtt","w+")
+f=open(file_path+".vtt","w+")
 
 def convert_time(time,pos):    
     time = float(frags[pos])    

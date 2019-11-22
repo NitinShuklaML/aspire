@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_path=/home/nitin/kaldi/egs/aspire/s5/brightcove/$1.mp4
+file_path=$(pwd)/$1.mp4
 
 echo "Input file path is "$file_path
 

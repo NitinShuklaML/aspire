@@ -2,9 +2,9 @@
 
 args=$1
 
-brightcove/authentication.sh $args
+./authentication.sh $args
 
-./GenerateTranscript.sh $args.wav
+echo $(./GenerateTranscript.sh $args.wav)
 
 rm -rf $args.wav
 
@@ -22,10 +22,10 @@ echo "" > ${args}_map.json
 
 rm -rf $args.mp4 ${args}_saperated_text.txt
 
-echo "" > $args.vtt
+echo "" > $(pwd)/vtts/$args.vtt
 
 ./json2vtt.py $args
 
 rm -rf ${args}_map.json
 
-cat $args.vtt
+cat $(pwd)/vtts/$args.vtt

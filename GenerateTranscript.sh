@@ -19,7 +19,7 @@ var1=scp:echo
 var2=' '
 var3=utterance-id1
 var4=$1
-var=$var1${var2}$var3${var2}$(pwd)/brightcove/$var4
+var=$var1${var2}$var3${var2}$(pwd)/$var4
 PREFIX=${var4: -17:13}
 
 echo "This is audio path "$var
